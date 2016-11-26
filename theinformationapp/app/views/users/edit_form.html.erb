@@ -1,0 +1,40 @@
+<div class="row">
+  <h2>Edit User</h2>
+  <%= form_tag("/users/edit", method: "post") do %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class="row form">  
+      <p>User Information</p>
+      <div class="large-12 columns">
+        <%= label_tag(:name, "Name", class: "formTitle")%>
+        <%= text_field_tag(:name) %>  
+        <%= label_tag(:email, "Email", class: "formTitle")%>
+        <%= text_field_tag(:email) %>
+      </div>
+    </div>
+
+    <div class="row form">
+      <p>Email Notifications</p>
+      <hr class="line">
+      <div class="large-6 columns radios">
+        <input type="checkbox" name="user[marketing]" value="marketing">&emsp;Marketing</input><br>
+        <input type="checkbox" name="user[articles]" value="articles">&emsp;Articles</input><br>
+        <input type="checkbox" name="user[digest]" value="digest">&emsp;Digest</input><br>
+        <input type="checkbox" name="user[digest]" value="digest">&emsp;Don't Email Me</input><br>
+      </div>
+      
+    <div class="actions">
+      <button type="submit" class="button">Update your profile</button>
+    </div>
+  <% end %>
+</div>

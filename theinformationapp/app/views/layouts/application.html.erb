@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Theinformationapp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>The Information</title>	
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	
+	<!-- Adds bootstrap CSS CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- Adds bootstrap JS CDN -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+
 </head>
 <body>
+	<%= render 'header' %>
+	<div class="container">
+	    <% if flash[:notice] || flash[:errors] %>
+	      <div class="notice"><%= flash[:notice] %></div>
+	      <div class="errors"><%= flash[:errors] %></div>
+	    <% end %>
 
-<%= yield %>
+	    <%= yield %>
+
+   	</div>
+	<%= render 'footer' %>
 
 </body>
 </html>

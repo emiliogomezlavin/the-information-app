@@ -61,11 +61,32 @@ ul.navbar-nav {
 	width: 80%;
 }
 
+.footer-text {
+    color: white;
+    font-family: 'Droid Sans', sans-serif;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+button.update {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.footerLogo {
+    width:10%;
+}
+
+.footer {
+    background-color: #1F2330;
+}
+
 input[type='checkbox'] {
     -webkit-appearance:none;
     width:50px;
     height:50px;
     background:white;
+    vertical-align: middle;
     border: 1px solid #C0C0C0;
 }
 input[type='checkbox']:checked {
@@ -82,9 +103,9 @@ input[type='checkbox']:checked {
 	height: 110px;
 }
 
-.navbar-align {
+/*.navbar-align {
 	line-height: 84px;
-}
+}*/
 
 a.navbar-brand {
 	margin-top: 15px;	
@@ -93,7 +114,6 @@ a.navbar-brand {
 .navbar-nav li a {
 	line-height: 110px;
 }
-
 
 /* title */
 .navbar-default .navbar-brand {
@@ -151,11 +171,19 @@ a.navbar-brand {
     background-color: #CCC;
 }
 @media (max-width: 767px) {
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-        color: #777;
+    .theInformationLogo {
+        width: 50%;
+        margin-top: -60px;
     }
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-        color: #333;
+    .navbar {
+        height: 70px;
     }
+
+    .collapse {
+        background-color: #c0392b;
+    }
+    ul {
+        color: white;
+    }
+
 }

@@ -5,12 +5,14 @@
     <div class="row form">  
       <p class="block-title">USER INFORMATION</p>
       <div class="col-lg-12 text-center">
-        <label for="user[name]" class="formTitle">Name</label>
+        <!-- <label for="user[name]" class="formTitle">Name</label>
         &emsp;<input type="text" name="user[name]" class="textField" placeholder="Name">
       </div>
-      <div class="col-lg-12 text-center">
+      <div class="col-lg-12 text-center"> -->
         <label for="user[email]" class="formTitle">Email</label>
-        &emsp;<input type="text" name="user[email]" class="textField" placeholder="Email">
+        &emsp;<input type="text" name="user[email]" class="textField" placeholder="Email" value="<%= @email %>">
+        <input type="hidden" name="old_email" class="textField" placeholder="Email" value="<%= @email %>">
+        <input type="hidden" name="nonce" class="textField" placeholder="Email" value="<%= @nonce %>">
       </div>
     </div>
     <hr class="line">
@@ -18,23 +20,23 @@
       <p class="block-title">EMAIL NOTIFICATIONS</p>
       <div class="row">
         <div class="col-lg-3 col-lg-offset-3">
-          <input type="checkbox" name="user[articles]" value="true" class="settingscheckbox">&emsp;Daily Articles</input>
+          <input type="checkbox" name="user[articles]" value="true" class="settings_checkbox">&emsp;Daily Articles</input>
         </div>
         <div class="col-lg-5 col-lg-offset-1">
-          <input type="checkbox" name="user[digest]" value="true" class="settingscheckbox">&emsp;Weekend Digest</input>
+          <input type="checkbox" name="user[digest]" value="true" class="settings_checkbox">&emsp;Weekend Digest</input>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-3 col-lg-offset-3">
-          <input type="checkbox" name="user[marketing]" value="true" class="settingscheckbox">&emsp;Marketing & Events</input>
+          <input type="checkbox" name="user[marketing]" value="true" class="settings_checkbox">&emsp;Marketing & Events</input>
         </div>
         <div class="col-lg-5 col-lg-offset-1">
-          <input type="checkbox" name="user[]" class="selectall">&emsp;Don't Email Me</input>
+          <input type="checkbox" name="user[selectall]" id="select_all">&emsp;Don't Email Me</input>
         </div>
       </div>
       <hr class="line">
-      <div class="actions">
-        <button type="submit" class="button">Update your profile</button>
+      <div class="actions text-center">
+        <button type="submit" class="button update">Update your profile</button>
       </div>
     </div>
   <% end %>

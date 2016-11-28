@@ -1,3 +1,5 @@
+require 'cgi'
+
 class UsersController < ApplicationController
 
 	def index
@@ -6,18 +8,24 @@ class UsersController < ApplicationController
 	end
 
 	def user_form
-		@user = User.new()
+		url = request.original_url
+		uri = URI.parse(url)
+		@query_params = CGI.parse(uri.query)
+		@email = @query_params["email"][0]
+		@nonce = @query_params["nonce"][0]
 		render :edit_form
 	end
 
 	def show_user
 		binding.pry
+		User.validate_user(params["old_email"], params["nonce"], user_params)
 		@user = User.new(user_params)
 		if @user.save
-	      flash[:notice] = "Succesfully updated User information"
-	      render :show_user
+	    	flash[:notice] = "Succesfully updated User information"
+	    	render :show_user
 	    else
-	      redirect_to user_form, flash: {error: @user.errors.full_messages.to_sentence}
+	    	flash[:error] = @user.errors.full_messages.to_sentence
+	    	render :edit_form
 	    end
 	end
 

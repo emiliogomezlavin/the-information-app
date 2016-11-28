@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 		@query_params = CGI.parse(uri.query)
 		@email = @query_params["email"][0]
 		@nonce = @query_params["nonce"][0]
+		@user = User.find_by(email: @email)
 		render :edit_form
 	end
 

@@ -20,15 +20,15 @@
       <p class="block-title">EMAIL NOTIFICATIONS</p>
       <div class="row">
         <div class="col-lg-3 col-lg-offset-3">
-          <input type="checkbox" name="user[articles]" value="true" class="settings_checkbox">&emsp;Daily Articles</input>
+          <input type="checkbox" name="user[articles]" value="<%= @user.articles %>" checked="<%= @user.articles %>" class="settings_checkbox">&emsp;Daily Articles</input>
         </div>
         <div class="col-lg-5 col-lg-offset-1">
-          <input type="checkbox" name="user[digest]" value="true" class="settings_checkbox">&emsp;Weekend Digest</input>
+          <input type="checkbox" name="user[digest]" value="<%= @user.digest %>" checked="<%= @user.digest %>" class="settings_checkbox">&emsp;Weekend Digest</input>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-3 col-lg-offset-3">
-          <input type="checkbox" name="user[marketing]" value="true" class="settings_checkbox">&emsp;Marketing & Events</input>
+          <input type="checkbox" name="user[marketing]" value="<%= @user.marketing %>" checked="<%= @user.marketing %>" class="settings_checkbox">&emsp;Marketing & Events</input>
         </div>
         <div class="col-lg-5 col-lg-offset-1">
           <input type="checkbox" name="user[selectall]" id="select_all">&emsp;Don't Email Me</input>

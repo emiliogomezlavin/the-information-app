@@ -35,8 +35,10 @@ body {
 	height: 65px;
 	width: 50%;
 	margin-bottom: 20px;
-	padding: 6px;
+	padding-left: 20px;
 	font-family: 'Yrsa', serif;
+    font-size: 20px;
+    color: gray;
 }
 
 h2 {
@@ -71,14 +73,20 @@ ul.navbar-nav {
 button.update {
     margin-top: 20px;
     margin-bottom: 50px;
+    background-color: #363636;
+    padding-right: 30px;
+    padding-left: 30px;
+    color: white;
+    font-family: 'Droid Sans', sans-serif;
 }
 
 .footerLogo {
-    width:10%;
+    width:4%;
+    margin-top: 20px;
 }
 
 .footer {
-    background-color: #1F2330;
+    background-color: #222222;
 }
 
 input[type='checkbox'] {
@@ -90,8 +98,8 @@ input[type='checkbox'] {
     border: 1px solid #C0C0C0;
 }
 input[type='checkbox']:checked {
-    background: #9999FF;
-    border: 1px solid #99999F;
+    background: #5668C4;
+    border: 1px solid #5668C4;
 }
 
 .notifications {

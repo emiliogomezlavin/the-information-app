@@ -4,14 +4,14 @@ class User < ActiveRecord::Base
 
 	validates :name, :email, presence: true
 	validates :email, confirmation: true, uniqueness: true
-	validates_format_of :email, :with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
+	# validates_format_of :email, :with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
 
 
 	def self.validate_user(old_email, nonce, user)
 		@token = Token.find_by(nonce: nonce)
-		binding.pry
 		if @token
 			@user = @token.user
+			binding.pry
 			if @user.email === user.old_email
 				if old_email != user.email
 					@user.email = user.email

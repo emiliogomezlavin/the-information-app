@@ -22,7 +22,7 @@ window.onload = function () {
   //select all checkboxes
   select_all.addEventListener("change", function(e){
       for (i = 0; i < checkboxes.length; i++) { 
-          checkboxes[i].checked = select_all.checked;
+          checkboxes[i].checked = select_all.unchecked;
       }
   });
 

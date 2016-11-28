@@ -8,6 +8,7 @@ class Token < ActiveRecord::Base
 		@token = Token.create({nonce: @nonce})
 		user.token_id = @token.id
 		user.save
+		return @token
 	end
 
 	def self.consume(nonce)

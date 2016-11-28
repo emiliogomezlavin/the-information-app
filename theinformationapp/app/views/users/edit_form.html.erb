@@ -5,10 +5,6 @@
     <div class="row form">  
       <p class="block-title">USER INFORMATION</p>
       <div class="col-lg-12 text-center">
-        <!-- <label for="user[name]" class="formTitle">Name</label>
-        &emsp;<input type="text" name="user[name]" class="textField" placeholder="Name">
-      </div>
-      <div class="col-lg-12 text-center"> -->
         <label for="user[email]" class="formTitle">Email</label>
         &emsp;<input type="text" name="user[email]" class="textField" placeholder="Email" value="<%= @email %>">
         <input type="hidden" name="old_email" class="textField" placeholder="Email" value="<%= @email %>">
@@ -20,15 +16,15 @@
       <p class="block-title">EMAIL NOTIFICATIONS</p>
       <div class="row">
         <div class="col-lg-3 col-lg-offset-3">
-          <input type="checkbox" name="user[articles]" value="<%= @user.articles %>" checked="<%= @user.articles %>" class="settings_checkbox">&emsp;Daily Articles</input>
+          <input type="checkbox" name="user[articles]" value="true" class="settings_checkbox">&emsp;Daily Articles</input>
         </div>
         <div class="col-lg-5 col-lg-offset-1">
-          <input type="checkbox" name="user[digest]" value="<%= @user.digest %>" checked="<%= @user.digest %>" class="settings_checkbox">&emsp;Weekend Digest</input>
+          <input type="checkbox" name="user[digest]" value="true" class="settings_checkbox">&emsp;Weekend Digest</input>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-3 col-lg-offset-3">
-          <input type="checkbox" name="user[marketing]" value="<%= @user.marketing %>" checked="<%= @user.marketing %>" class="settings_checkbox">&emsp;Marketing & Events</input>
+          <input type="checkbox" name="user[marketing]" value="true" class="settings_checkbox">&emsp;Marketing & Events</input>
         </div>
         <div class="col-lg-5 col-lg-offset-1">
           <input type="checkbox" name="user[selectall]" id="select_all">&emsp;Don't Email Me</input>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161127234120) do
+ActiveRecord::Schema.define(version: 20161128100901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,9 +29,12 @@ ActiveRecord::Schema.define(version: 20161127234120) do
     t.boolean  "marketing"
     t.boolean  "articles"
     t.boolean  "digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "token_id"
+    t.string   "good_link"
+    t.string   "wrong_email_link"
+    t.string   "wrong_nonce_link"
   end
 
   add_index "users", ["token_id"], name: "index_users_on_token_id", using: :btree

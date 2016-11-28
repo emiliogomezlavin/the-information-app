@@ -1,0 +1,17 @@
+<div class="row">
+  <h2>Users</h2>
+  <hr class="line">
+  <% @users.each do |user| %>
+    <div class="col-lg-6 col-sm-12">
+      <h3><%= user.name %></h3>
+      <p>Email: <%= user.email %></p>
+      <p>Nonce: <%= user.token["nonce"] %></p>
+      <ul class="test-links">
+        <li><a href="<%= user.good_link %>">Good Link</a></li>
+        <li><a href="<%= user.wrong_email_link %>">Wrong Email Link</a></li>
+        <li><a href="<%= user.wrong_nonce_link %>">Wrong Nonce Link</a></li>
+      </ul>      
+    </div>
+  <% end %>
+</div>
+<br><br><br><br>

@@ -11,14 +11,13 @@ class User < ActiveRecord::Base
 		@token = Token.find_by(nonce: nonce)
 		if @token
 			@user = @token.user
-			binding.pry
-			if @user.email === user.old_email
-				if old_email != user.email
-					@user.email = user.email
+			if @user.email === old_email
+				if old_email != user["email"]
+					@user.email = user["email"]
 				end
-				@user.marketing = user.marketing
-				@user.articles = user.articles
-				@user.digest = user.digest
+				@user.marketing = user["marketing"]
+				@user.articles = user["articles"]
+				@user.digest = user["digest"]
 				@user.save
 				return @user
 			else

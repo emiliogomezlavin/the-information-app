@@ -13,19 +13,19 @@ class UsersController < ApplicationController
 		@query_params = CGI.parse(uri.query)
 		@email = @query_params["email"][0]
 		@nonce = @query_params["nonce"][0]
-		@user = User.find_by(email: @email)
+		if User.find_by(email: @email)
+			@user = User.find_by(email: @email)
+		end
 		render :edit_form
 	end
 
 	def show_user
-		binding.pry
-		User.validate_user(params["old_email"], params["nonce"], user_params)
-		@user = User.new(user_params)
-		if @user.save
-	    	flash[:notice] = "Succesfully updated User information"
+		@user = User.validate_user(params["old_email"], params["nonce"], user_params)
+		if @user
+	    	flash[:notice] = "Succesfully updated information"
 	    	render :show_user
 	    else
-	    	flash[:error] = @user.errors.full_messages.to_sentence
+	    	flash[:errors] = "Invalid information. No changes saved"
 	    	render :edit_form
 	    end
 	end

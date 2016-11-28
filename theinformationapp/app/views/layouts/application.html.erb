@@ -28,8 +28,8 @@
 	<%= render 'header' %>
 	<div class="container">
 	    <% if flash[:notice] || flash[:errors] %>
-	      <div class="notice"><%= flash[:notice] %></div>
-	      <div class="errors"><%= flash[:errors] %></div>
+	      <div class="notice text-center"><%= flash[:notice] %></div>
+	      <div class="errors text-center"><%= flash[:errors] %></div>
 	    <% end %>
 
 	    <%= yield %>

@@ -63,11 +63,29 @@ ul.navbar-nav {
 	width: 80%;
 }
 
+.textarea {
+    vertical-align: middle;
+}
+
+.notice {
+    background-color: rgba(32, 216, 63, 0.6);
+    color: rgb(1, 80,14);
+}
+
+.errors {
+    background-color: rgba(239, 54, 54, 0.6);
+    color: rgb(122, 0, 0);
+}
+
 .footer-text {
     color: white;
     font-family: 'Droid Sans', sans-serif;
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+.test-links {
+    list-style-type: none;
 }
 
 button.update {

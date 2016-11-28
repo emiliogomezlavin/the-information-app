@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$('.selectall').click(function() {
+    if ($(this).is(':checked')) {
+        $('.settingscheckbox').attr('checked', true);
+    } else {
+        $('.settingscheckbox').attr('checked', false);
+    }
+});
